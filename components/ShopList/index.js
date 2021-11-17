@@ -4,9 +4,9 @@ import ShopItem from './ShopItem';
 import shopStore from '../../stores/shopStore';
 import { observer } from "mobx-react";
 
-const ShopList = () => {
+const ShopList = ({ navigation }) => {
     const shopList = shopStore.shops.map((shop) => ( 
-    <ShopItem shop={shop} key={shop._id} /> 
+    <ShopItem navigation={navigation} shop={shop} key={shop._id} /> 
         ));
     return <View>{shopList}</View>
 };

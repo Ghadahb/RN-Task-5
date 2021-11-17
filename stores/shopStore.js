@@ -16,7 +16,7 @@ class ShopStore {
     try {
       const response = await instance.get("/shops");
       this.shops = response.data;
-      // this.isLoading = false;
+      this.isLoading = false;
     } catch (error) {
       console.log("ShopStore -> fetchShops -> error", error);
     }

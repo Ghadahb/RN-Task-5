@@ -1,13 +1,15 @@
+import { Spinner } from 'native-base';
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { baseURL } from '../../stores/instance';
-import { observer } from 'mobx-react';
+// import { observer } from 'mobx-react';
 import shopStore from '../../stores/shopStore';
 import ProductList from '../ProductList';
+// import { Spinner } from 'native-base';
 
 
 const ShopDetail = () => {
-    // if(shopStore.isLoading) return <Spinner />;
+    if (shopStore.isLoading) return <Spinner/>
     const shop = shopStore.shops[0];
     return (
         <View>
@@ -17,7 +19,10 @@ const ShopDetail = () => {
             <Image source={{ uri: baseURL + shop.image }} 
             style={{
                 width: 50, 
-                height: 50
+                height: 50,
+          textAlign: "center",
+          paddingTop: "50",
+          margin: "30"
             }}/>
             <ProductList products={shop.products}/>
 
@@ -25,6 +30,6 @@ const ShopDetail = () => {
     )
 }
 
-export default observer(ShopDetail);
+export default ShopDetail;
 
 const styles = StyleSheet.create({})
