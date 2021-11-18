@@ -23,6 +23,7 @@ const Home = ({ navigation }) => {
         </Button>
       </ImageBackground>
     </View>
+    
   );
 };
 export default Home;
