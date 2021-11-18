@@ -10,26 +10,17 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <Text style={styles.text}>
-        Welcome
-          </Text>
-          <Text style={styles.text}>
-        مرحبا
-          </Text>
-          <Text style={styles.text}>
-          Bienvenue
-          </Text>
-          <Text style={styles.text}>
-          Benvenuto
-          </Text>
-          <Button
+        <Text style={styles.text}>Welcome</Text>
+        <Text style={styles.text}>مرحبا</Text>
+        <Text style={styles.text}>Bienvenue</Text>
+        <Text style={styles.text}>Benvenuto</Text>
+        <Button
           onPress={() => navigation.navigate("ShopList")}
           style={styles.button}
           title="CLICK HERE"
-          >
-            Shop List
-          </Button>
-          
+        >
+          Shop List
+        </Button>
       </ImageBackground>
     </View>
   );
@@ -41,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     textAlign: "center",
-    padding: 20
+    padding: 20,
   },
   image: {
     flex: 1,
@@ -51,7 +42,6 @@ const styles = StyleSheet.create({
     // resizeMode: "cover",
     borderWidth: 10,
     opacity: 2,
-    
   },
   text: {
     color: "white",
@@ -69,7 +59,5 @@ const styles = StyleSheet.create({
     // elevation: 3,
     // height: 100
     padding: 20,
-   
-  }
+  },
 });
-

@@ -1,18 +1,18 @@
-import { Navigation } from "@material-ui/icons";
-import { HStack } from "native-base";
+// import { createStackNavigator } from "@react-navigation/stack";
+import { HStack, Image, Pressable } from "native-base";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { baseURL } from "../../stores/instance";
 
 const ShopItem = ({ shop, navigation }) => {
   return (
-    <View>
-      <HStack
-        onPress={() => Navigation.navigate("ShopDetail")}
-        w="100%"
-        alignItems="center"
-        space="3"
+    <Pressable
+        onPress={() => { 
+          navigation.navigate('ShopDetail', { shop: shop });
+        console.log('click');
+      }}
       >
+        <HStack w="100%" alignItems="center" space="3">
         <Text
           style={{
             fontSize: 20,
@@ -43,7 +43,8 @@ const ShopItem = ({ shop, navigation }) => {
           }}
         />
       </HStack>
-    </View>
+      </Pressable>
+  
   );
 };
 

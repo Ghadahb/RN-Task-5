@@ -8,9 +8,9 @@ import ProductList from '../ProductList';
 // import { Spinner } from 'native-base';
 
 
-const ShopDetail = () => {
+const ShopDetail = ({ navigation, route }) => {
     if (shopStore.isLoading) return <Spinner/>
-    const shop = shopStore.shops[0];
+    const { shop }  = route.params;
     return (
         <View>
             <Text style= {{fontSize: 24, fontWeight:"bold", margin: 5}}>
