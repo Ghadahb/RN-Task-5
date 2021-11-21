@@ -8,11 +8,12 @@ import CartList from "../Cart/CartList";
 import CartButton from "../Cart/CartButton";
 
 
-const { Navigator, Screen } = createStackNavigator();
+const RootNavigator = () => { 
+  const { Navigator, Screen } = createStackNavigator();
 
-export default function RootNavigator() {
   return (
-    <Navigator initialRouteName="Cart">
+    <Navigator 
+    initialRouteName="CartList">
       <Screen name="Home" component={Home} 
       options={{ headerShown: false }}
       />
@@ -41,13 +42,14 @@ export default function RootNavigator() {
             headerTintColor: '#fff',
           }
         };
-        
-        <Screen name="Cart" component={CartList} />
-        
       }}
       />
+        
+        <Screen name="CartList" component={CartList} />
     </Navigator>
   );
 }
+
+export default RootNavigator;
 
 const styles = StyleSheet.create({});
