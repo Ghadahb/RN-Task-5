@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
@@ -6,14 +6,19 @@ import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
 import CartList from "../Cart/CartList";
 import CartButton from "../Cart/CartButton";
+import Signin from "../authentication/Signin";
 
 
 const RootNavigator = () => { 
   const { Navigator, Screen } = createStackNavigator();
+  // const [user, setUser] = useState({
+  //   username: "",
+  //   password: "",
+  // });
 
   return (
     <Navigator 
-    initialRouteName="CartList">
+    initialRouteName="Signin">
       <Screen name="Home" component={Home} 
       options={{ headerShown: false }}
       />
@@ -46,6 +51,8 @@ const RootNavigator = () => {
       />
         
         <Screen name="CartList" component={CartList} />
+        <Screen name="Signin" component={Signin} options={{
+          headerShown: false }} />
     </Navigator>
   );
 }
